@@ -1,0 +1,8 @@
+<h1>Mudando o nome do(a) {{user.name}}</h1>
+<form action="/users/edit" method="post">
+    <div class="form-control">
+        <input type="hidden" name="id" value="{{user.id}}">
+        <input type="text" name="name" placeholder="Escreva o nome aqui">
+    </div>
+    <input type="submit" value="Criar">
+</form>

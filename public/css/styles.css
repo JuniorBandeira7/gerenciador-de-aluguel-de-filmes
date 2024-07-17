@@ -8,6 +8,10 @@ body{
     background-color: #ccc;
 }
 
+#navbar-spaceholder{
+    padding: 1em 2em;
+}
+
 #navbar{
     border-bottom: 1px solid #ccc;
     padding: 1em 2em;
