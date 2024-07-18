@@ -1,8 +1,9 @@
-<h1>Mudando o nome do(a) {{movie.name}}</h1>
+<h1>Mudando o titulo do {{movie.title}}</h1>
 <form action="/movies/edit" method="post">
     <div class="form-control">
         <input type="hidden" name="id" value="{{movie.id}}">
-        <input type="text" name="name" placeholder="Escreva o nome aqui">
+        <input type="text" name="title" value="{{movie.title}}">
+        <textarea name="description" >{{movie.description}}</textarea>
     </div>
-    <input type="submit" value="Criar">
+    <input type="submit" value="Mudar">
 </form>

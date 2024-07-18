@@ -40,7 +40,7 @@ module.exports = class MovieController{
 
         await Movie.update(movie, {where: {id: id}})
 
-        res.redirect('/')
+        res.redirect('/movies')
     }
 
     static async updateMovie(req, res){
@@ -49,6 +49,12 @@ module.exports = class MovieController{
         const movie = await Movie.findOne({where: {id: id}, raw: true})
 
         res.render('movies/edit', {movie})
+    }
+
+    static async movies(req, res){
+        const movies = await Movie.findAll({raw: true})
+
+        res.render('movies/movies', {movies})
     }
 
 }

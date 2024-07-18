@@ -10,5 +10,6 @@ router.post('/add', UserController.createUserSave)
 router.post('/remove', UserController.removeUser)
 router.get('/edit/:id', UserController.updateUser)
 router.post('/edit', UserController.updateUserPost)
+router.get('/', UserController.users)
 
 module.exports = router

@@ -38,7 +38,7 @@ module.exports = class UserController{
 
         await User.update(user, {where: {id: id}})
 
-        res.redirect('/')
+        res.redirect('/users')
     }
 
     static async updateUser(req, res){
@@ -47,6 +47,12 @@ module.exports = class UserController{
         const user = await User.findOne({where: {id: id}, raw: true})
 
         res.render('users/edit', {user})
+    }
+
+    static async users(req, res){
+        const users = await User.findAll({raw: true})
+
+        res.render('users/users', {users})
     }
 
 }
