@@ -13,6 +13,8 @@ const homeRoutes = require('./routes/homeRoutes')
 
 const userRoutes = require('./routes/userRoutes')
 
+const movieRoutes = require('./routes/movieRoutes')
+
 const hbs = exphbs.create({
     partialsDir: ["views/partials"]
 })
@@ -33,6 +35,8 @@ app.use(express.static('public'))
 app.use('/', homeRoutes)
 
 app.use('/users', userRoutes)
+
+app.use('/movies', movieRoutes)
 
 conn.sync().then(()=>{
     app.listen(3000)
