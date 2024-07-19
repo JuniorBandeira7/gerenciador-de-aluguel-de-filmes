@@ -55,4 +55,12 @@ module.exports = class UserController{
         res.render('users/users', {users})
     }
 
+    static async user(req, res){
+        const id = req.params.id
+
+        const user = await User.findOne({where:{id: id},raw: true})
+
+        res.render('users/user', {user})
+    }
+
 }

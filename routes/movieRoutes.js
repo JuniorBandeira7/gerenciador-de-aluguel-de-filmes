@@ -11,5 +11,6 @@ router.post('/remove', MovieController.removeMovie)
 router.get('/edit/:id', MovieController.updateMovie)
 router.post('/edit', MovieController.updateMoviePost)
 router.get('/', MovieController.movies)
+router.get('/:id', MovieController.movie)
 
 module.exports = router

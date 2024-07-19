@@ -1,8 +1,11 @@
-<h1>Qual o nome do novo cliente?</h1>
-<form action="/movies/add" method="post">
+<h1>Qual o nome do novo filme?</h1>
+<form action="/movies/add" method="post" class="create-form">
     <div class="form-control">
-        <input type="text" name="title" placeholder="Escreva o titulo do filme aqui">
-        <textarea name="description" placeholder="Escreva a sinopse do filme aqui"></textarea>
+        <label for="title">Título do filme</label>
+        <input type="text" name="title" class="escrever">
+        <label for="description">Descrição</label>
+        <textarea name="description" class="escrever"></textarea>
+        <input type="submit" value="Criar" class="submit">
     </div>
-    <input type="submit" value="Criar">
+    
 </form>

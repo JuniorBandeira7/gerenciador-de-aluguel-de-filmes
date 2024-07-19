@@ -8,20 +8,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <nav id="navbar">
-        <h2></h2>
-        <ul>
-            <li><a href="/users">Clientes</a></li>
-            <li><a href="/users/add">Cadastrar Cliente</a></li>
-            <li><a href="/movies">Filmes</a></li>
-            <li><a href="/movies/add">Cadastrar filme</a></li>
-        </ul>
-    </nav>
-    <nav id="navbar-spaceholder">   
-        <li>g</li>
-    </nav>
     <div class="container">
-        {{{body}}}
+        <nav id="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/users">Clientes</a></li>
+                <li><a href="/users/add">Cadastrar Cliente</a></li>
+                <li><a href="/movies">Filmes</a></li>
+                <li><a href="/movies/add">Cadastrar filme</a></li>
+            </ul>
+        </nav>
+        <div id="hbs-body">{{{body}}}</div>
     </div>
 </body>
 </html>

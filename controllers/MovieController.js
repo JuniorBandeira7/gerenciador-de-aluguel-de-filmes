@@ -57,4 +57,12 @@ module.exports = class MovieController{
         res.render('movies/movies', {movies})
     }
 
+    static async movie(req, res){
+        const id = req.params.id
+
+        const movie = await Movie.findOne({where:{id: id},raw: true})
+
+        res.render('movies/movie', {movie})
+    }
+
 }
