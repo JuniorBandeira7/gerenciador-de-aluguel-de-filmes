@@ -1,4 +1,19 @@
 <h1>Filmes alugados pelo {{user.name}}</h1>
-<div class="unique-container">
-    
+<div class="container-list">
+    <ul>
+        {{#each movies}}
+            <li>
+                <a href="/movies/{{this.id}}" class="title">{{this.title}}</a>
+                <div class="actions">
+                    <form action="/users/return" method="post">
+                        <input type="hidden" name="userId" value="{{this.userId}}">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <button type="submit">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </form>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
 </div>

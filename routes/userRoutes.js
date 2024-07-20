@@ -12,5 +12,6 @@ router.get('/edit/:id', UserController.updateUser)
 router.post('/edit', UserController.updateUserPost)
 router.get('/', UserController.users)
 router.get('/:id', UserController.user)
+router.post('/return', UserController.returnMovie)
 
 module.exports = router

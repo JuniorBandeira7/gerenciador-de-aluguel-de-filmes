@@ -1,5 +1,6 @@
 const { raw } = require('express')
 const User = require ('../models/User')
+const Movie = require ('../models/Movie')
 
 module.exports = class UserController{
     /* Create */
@@ -58,9 +59,24 @@ module.exports = class UserController{
     static async user(req, res){
         const id = req.params.id
 
+        const movies = await Movie.findAll({where:{userId: id},raw: true})
+
         const user = await User.findOne({where:{id: id},raw: true})
 
-        res.render('users/user', {user})
+        res.render('users/user', {user, movies})
     }
 
+    static async returnMovie(req, res){
+        const id = req.body.id
+
+        const userId = req.body.userId
+
+        const movie ={
+            userId: null
+        }
+
+        await Movie.update(movie, {where: {id: id}})
+
+        res.redirect(`/users/${userId}`)
+    }
 }
