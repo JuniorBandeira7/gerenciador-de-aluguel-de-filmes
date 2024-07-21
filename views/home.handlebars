@@ -1,1 +1,57 @@
-<h1>teste</h1>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<form class="container-list" id="home-container-list" action="/rent" method="post">
+    <div class="wrapper">
+      <span>Clientes</span>
+    
+      <div class="search">
+        <input class="search-input" id="user-input" name="user" list="users"><i class="fa fa-search"></i>
+      </div>
+    
+      <datalist id="users">
+        {{#each users}}
+            <option data-value="{{this.id}}" value="{{this.name}}">{{this.name}}</option>
+        {{/each}}
+      </datalist>
+    </div>
+    <div class="wrapper">
+      <span>Filmes</span>
+    
+      <div class="search">
+        <input class="search-input" id="movie-input" name="movie" list="movies"><i class="fa fa-search"></i>
+      </div>
+    
+      <datalist id="movies">
+        {{#each movies}}
+            <option data-value="{{this.id}}" value="{{this.title}}">{{this.title}}</option>
+        {{/each}}
+      </datalist>
+    </div>
+    <div id="submit-container"><input type="submit" class="submit" value="Alugar"></div>
+</form>
+<script>
+    document.getElementById('home-container-list').addEventListener('submit', function(event) {
+        const userInput = document.getElementById('user-input')
+        const userOption = document.querySelector(`#users option[value="${userInput.value}"]`)
+        const userId = userOption ? userOption.dataset.value : null
+
+        const movieInput = document.getElementById('movie-input')
+        const movieOption = document.querySelector(`#movies option[value="${movieInput.value}"]`)
+        const movieId = movieOption ? movieOption.dataset.value : null
+
+        if (userId) {
+            const userIdInput = document.createElement('input')
+            userIdInput.type = 'hidden'
+            userIdInput.name = 'userId'
+            userIdInput.value = userId
+            this.appendChild(userIdInput)
+        }
+
+        if (movieId) {
+            const movieIdInput = document.createElement('input')
+            movieIdInput.type = 'hidden'
+            movieIdInput.name = 'movieId'
+            movieIdInput.value = movieId
+            this.appendChild(movieIdInput)
+        }
+    })
+</script>
