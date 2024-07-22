@@ -130,7 +130,7 @@ body{
 
 .escrever{
     margin-bottom: 40px;
-    font-size: 20px;
+    font-size: 1em;
     width: 50%;
     background: none;
     color: white;
@@ -141,8 +141,9 @@ body{
 }
 
 .escrever:hover{
-    font-size: 25px;
+    font-size: 1.25em;
     transition: 1s;
+    width: 75%;
 }
 
 .form-control textarea{

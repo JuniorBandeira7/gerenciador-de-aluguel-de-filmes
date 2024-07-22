@@ -14,7 +14,7 @@
       </datalist>
     </div>
     <div class="wrapper">
-      <span>Filmes</span>
+      <span>Filmes disponíveis</span>
     
       <div class="search">
         <input class="search-input" id="movie-input" name="movie" list="movies"><i class="fa fa-search"></i>
@@ -22,7 +22,9 @@
     
       <datalist id="movies">
         {{#each movies}}
-            <option data-value="{{this.id}}" value="{{this.title}}">{{this.title}}</option>
+          {{#if (Equal this.userId null)}}
+              <option data-value="{{this.id}}" value="{{this.title}}">{{this.title}}</option>
+          {{/if}}
         {{/each}}
       </datalist>
     </div>

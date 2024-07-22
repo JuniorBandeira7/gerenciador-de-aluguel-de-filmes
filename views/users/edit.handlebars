@@ -1,8 +1,10 @@
 <h1>Mudando o nome do(a) {{user.name}}</h1>
-<form action="/users/edit" method="post">
+<form action="/users/edit" method="post" class="create-form">
     <div class="form-control">
         <input type="hidden" name="id" value="{{user.id}}">
-        <input type="text" name="name" value="{{user.name}}">
+        <label for="name">Nome</label>
+        <input type="text" name="name" value="{{user.name}}" class="escrever">
+        <input type="submit" value="Mudar" class="submit">
     </div>
-    <input type="submit" value="Mudar">
 </form>
+

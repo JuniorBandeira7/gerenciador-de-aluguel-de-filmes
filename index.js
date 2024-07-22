@@ -16,8 +16,13 @@ const userRoutes = require('./routes/userRoutes')
 const movieRoutes = require('./routes/movieRoutes')
 
 const hbs = exphbs.create({
-    partialsDir: ["views/partials"]
-})
+    partialsDir: ["views/partials"],
+    helpers: {
+        Equal: function (a, b) {
+            return a === b;
+        }
+    }
+});
 
 app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars')
